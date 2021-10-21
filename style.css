@@ -1,0 +1,12 @@
+/*!
+Theme Name: PA Portner
+Theme URI: https://www.paportner.com/
+Author: Duo Studio
+Author URI: https://duo-studio.co
+Version: 2.0.0
+*/
+
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+@import "less/swipermin.css";
+@import "less/reset.css";
+@import "less/global.css";

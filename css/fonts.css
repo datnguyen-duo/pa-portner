@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'UntitledSans-Regular';
+  src: url('../fonts/UntitledSans-Regular.eot');
+  src: url('../fonts/UntitledSans-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/UntitledSans-Regular.woff') format('woff'), url('../fonts/UntitledSans-Regular.ttf') format('truetype'), url('../fonts/UntitledSans-Regular.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
