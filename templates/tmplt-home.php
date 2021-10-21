@@ -15,23 +15,20 @@ get_header(); ?>
         <div class="hero_slider_section">
             <div class="swiper-container hero_slider">
                 <div class="swiper-wrapper">
-                    <?php foreach( $projects_categories as $cat ):
-                        $featured_project = get_field('featured_project', $cat);
-                        if( get_the_post_thumbnail($featured_project[0]->ID) ): ?>
+                    <?php if( have_rows('hero_images') ): ?>
+                        <?php while( have_rows('hero_images') ) : the_row(); ?>
                             <div class="swiper-slide">
                                 <div class="image_holder">
-                                    <?php echo get_the_post_thumbnail($featured_project[0]->ID); ?>
+                                    <img src="<?php the_sub_field("hero_images_image"); ?>" alt="banner-image">
                                 </div>
-
-                                <a href="<?php echo $projects_page_url.'?category='.$cat->slug; ?>&overview=1" class="link">
+                                <a href="/portfolio/" class="link">
                                     Learn More
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/icons/arrow-white.svg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/icons/arrow-white.svg" alt="arrow">
                                 </a>
                             </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
-
                 <?php if( $hero_section['small_title'] || $hero_section['title'] || $hero_section['button'] ): ?>
                     <div class="section_content">
                         <?php if( $hero_section['small_title'] ): ?>

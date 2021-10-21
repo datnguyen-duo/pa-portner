@@ -2,9 +2,7 @@
 /* Template Name: Services */
 get_header(); ?>
     <div class="template_services_container">
-        <?php
-        $hero = get_field('hero');
-        ?>
+        <?php $hero = get_field('hero'); ?>
         <div class="hero_section">
             <div class="image_with_desc">
                 <div class="left">
@@ -20,11 +18,20 @@ get_header(); ?>
                 </div>
 
                 <div class="right">
-                    <?php if( $hero['video'] ): ?>
-                        <div class="image_container">
-                            <div class="image_holder">
-                                <video autoplay playsinline muted loop src="<?php echo $hero['video']['url']; ?>" alt="<?php echo $hero['video']['alt']; ?>">
-                            </div>
+                    <?php if( $hero['image'] || $hero['video'] ): ?>
+                        <div class="media_container">
+                            <?php if( $hero['video'] ): ?>
+                                <div class="video_holder">
+                                    <video autoplay loop muted>
+                                        <source src="<?php echo $hero['video']['url']; ?>" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            <?php elseif ( $hero['image'] ): ?>
+                                <div class="image_holder">
+                                    <img src="<?php echo $hero['image']['url']; ?>" alt="<?php echo $hero['image']['alt']; ?>">
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 </div>

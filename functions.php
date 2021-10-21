@@ -63,3 +63,5 @@ add_action('admin_menu', 'remove_options');
 require_once("inc/inc-acf.php");
 require_once("inc/custom-posts-types.php");
 require_once("inc/custom-taxonomies.php");
+require_once("inc/portfolio-filter.php");
+require_once("inc/featured-project-filter.php");

@@ -4,8 +4,8 @@ function register_taxonomies() {
     $labels = array(
         'name'              => _x( 'Category', 'taxonomy general name', 'textdomain' ),
         'singular_name'     => _x( 'Category', 'taxonomy singular name', 'textdomain' ),
-        'search_items'      => __( 'Search Categories', 'textdomain' ),
-        'all_items'         => __( 'All Categories', 'textdomain' ),
+        'search_items'      => __( 'Search Cities', 'textdomain' ),
+        'all_items'         => __( 'All Cities', 'textdomain' ),
         'parent_item'       => __( 'Parent Category', 'textdomain' ),
         'parent_item_colon' => __( 'Parent Category:', 'textdomain' ),
         'edit_item'         => __( 'Edit Category', 'textdomain' ),
