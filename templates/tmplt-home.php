@@ -11,24 +11,28 @@ get_header(); ?>
         ) );
 
         $hero_section = get_field('hero');
+        $hero_slider = get_field('hero_images');
         ?>
         <div class="hero_slider_section">
             <div class="swiper-container hero_slider">
-                <div class="swiper-wrapper">
-                    <?php if( have_rows('hero_images') ): ?>
-                        <?php while( have_rows('hero_images') ) : the_row(); ?>
-                            <div class="swiper-slide">
-                                <div class="image_holder">
-                                    <img src="<?php the_sub_field("hero_images_image"); ?>" alt="banner-image">
+                <?php if( $hero_slider ): ?>
+                    <div class="swiper-wrapper">
+                        <?php foreach( $hero_slider as $slide ):
+                            $img = $slide['hero_images_image'];
+                            if( $img ): ?>
+                                <div class="swiper-slide">
+                                    <div class="image_holder"><img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"></div>
+
+                                    <a href="<?php echo $projects_page_url ?>" class="link">
+                                        Learn More
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/icons/arrow-white.svg" alt="">
+                                    </a>
                                 </div>
-                                <a href="/portfolio/" class="link">
-                                    Learn More
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/icons/arrow-white.svg" alt="arrow">
-                                </a>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
                 <?php if( $hero_section['small_title'] || $hero_section['title'] || $hero_section['button'] ): ?>
                     <div class="section_content">
                         <?php if( $hero_section['small_title'] ): ?>
