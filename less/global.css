@@ -1121,13 +1121,13 @@ h6 {
           align-items: center;
 }
 .site_footer .footer_content .left .other_logos_holder .logo {
-  width: 95px;
+  width: 87px;
   display: inline-block;
   margin-right: 14px;
 }
 .site_footer .footer_content .left .other_logos_holder .logo:last-of-type {
+  width: 120px;
   margin-right: 0;
-  width: 136px;
 }
 .site_footer .footer_content .left .other_logos_holder .logo img {
   width: 100%;
